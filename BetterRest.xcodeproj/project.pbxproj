@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0B59F324705ABA0055D557 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B59F224705ABA0055D557 /* SleepCalculator.mlmodel */; };
 		4C794FA0246ED79F0015B23B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C794F9F246ED79F0015B23B /* AppDelegate.swift */; };
 		4C794FA2246ED79F0015B23B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C794FA1246ED79F0015B23B /* SceneDelegate.swift */; };
 		4C794FA4246ED79F0015B23B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C794FA3246ED79F0015B23B /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C0B59F224705ABA0055D557 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepCalculator.mlmodel; sourceTree = "<group>"; };
 		4C794F9C246ED79F0015B23B /* BetterRest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterRest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C794F9F246ED79F0015B23B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C794FA1246ED79F0015B23B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				4C794FA5246ED7A00015B23B /* Assets.xcassets */,
 				4C794FAA246ED7A00015B23B /* LaunchScreen.storyboard */,
 				4C794FAD246ED7A00015B23B /* Info.plist */,
+				4C0B59F224705ABA0055D557 /* SleepCalculator.mlmodel */,
 				4C794FA7246ED7A00015B23B /* Preview Content */,
 			);
 			path = BetterRest;
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C0B59F324705ABA0055D557 /* SleepCalculator.mlmodel in Sources */,
 				4C794FA0246ED79F0015B23B /* AppDelegate.swift in Sources */,
 				4C794FA2246ED79F0015B23B /* SceneDelegate.swift in Sources */,
 				4C794FA4246ED79F0015B23B /* ContentView.swift in Sources */,
