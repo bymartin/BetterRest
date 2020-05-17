@@ -14,9 +14,9 @@ struct ContentView: View {
     @State private var sleepAmount = 8.0
     @State private var coffeeAmount = 1
     
-    @State private var alertTitle = ""
-    @State private var alertMessage = ""
-    @State private var showingAlert = false
+//    @State private var alertTitle = ""
+//    @State private var alertMessage = ""
+//    @State private var showingAlert = false
     
     var body: some View {
         NavigationView {
@@ -49,16 +49,29 @@ struct ContentView: View {
                     .labelsHidden()
                     //.pickerStyle(WheelPickerStyle())
                 }
+                
+                Section(header: Text("Your recommended bed time is: ")) {
+                    HStack {
+                        Spacer()
+                        Text(calculateBedTime())
+                            .font(.largeTitle)
+                            .foregroundColor(.purple)
+                        Spacer()
+                    }
+                }
             }
             .navigationBarTitle("BetterRest")
-            .navigationBarItems(trailing:
-                Button(action: calculateBedTime) {
-                    Text("Calculate")
-                }  
-            )
-                .alert(isPresented: $showingAlert) {
-                    Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-            }
+                
+            // Challenge 3: Remove Calculate button
+            // Will display results all the time instead
+//            .navigationBarItems(trailing:
+//                Button(action: calculateBedTime) {
+//                    Text("Calculate")
+//                }
+//            )
+//                .alert(isPresented: $showingAlert) {
+//                    Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+//            }
         }
     }
     
@@ -69,7 +82,7 @@ struct ContentView: View {
         return Calendar.current.date(from: components) ?? Date()
     }
     
-    func calculateBedTime() {
+    func calculateBedTime() -> String {
         let model = SleepCalculator()
         let components = Calendar.current.dateComponents([.hour, .minute], from: wakeUp)
         let hour = (components.hour ?? 0) * 60 * 60
@@ -84,15 +97,17 @@ struct ContentView: View {
             let formatter = DateFormatter()
             formatter.timeStyle = .short
             
-            alertTitle = "Your ideal bedtime is ..."
-            alertMessage = formatter.string(from: sleepTime)
+            //alertTitle = "Your ideal bedtime is ..."
+            //alertMessage = formatter.string(from: sleepTime)
+            return formatter.string(from: sleepTime)
             
         } catch {
-            alertTitle = "Error"
-            alertMessage = "Sorry, there was a problem calculating your bedtime."
+            //alertTitle = "Error"
+            //alertMessage = "Sorry, there was a problem calculating your bedtime."
+            return "Error calculating your bedtime!"
         }
         
-        showingAlert = true
+        //showingAlert = true
     }
 }
 
