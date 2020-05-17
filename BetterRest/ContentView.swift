@@ -41,14 +41,13 @@ struct ContentView: View {
                 }
                 
                 Section(header: Text("Daily coffee intake")) {
-                    
-                    Stepper(value: $coffeeAmount, in: 1...20) {
-                        if coffeeAmount == 1 {
-                            Text("\(coffeeAmount) cup ")
-                        } else {
-                            Text("\(coffeeAmount) cups")
+                    Picker("Number of cups", selection: $coffeeAmount) {
+                        ForEach(1..<21) {
+                            Text($0 == 1 ? "\($0) cup" : "\($0) cups")
                         }
                     }
+                    .labelsHidden()
+                    //.pickerStyle(WheelPickerStyle())
                 }
             }
             .navigationBarTitle("BetterRest")
