@@ -33,18 +33,14 @@ struct ContentView: View {
                         .datePickerStyle(WheelDatePickerStyle()) // iOS only
                 }
                 
-                VStack(alignment: .leading, spacing: 0){
-                    Text("Desired amount of sleep")
-                        .font(.headline)
+                Section(header: Text("Desired amount of sleep")) {
                     
                     Stepper(value: $sleepAmount, in: 4...12, step: 0.25) {
                         Text("\(sleepAmount, specifier: "%g") hours")
                     }
                 }
                 
-                VStack(alignment: .leading, spacing: 0) {
-                    Text("Daily coffee intake")
-                        .font(.headline)
+                Section(header: Text("Daily coffee intake")) {
                     
                     Stepper(value: $coffeeAmount, in: 1...20) {
                         if coffeeAmount == 1 {
